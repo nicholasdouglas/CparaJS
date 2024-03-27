@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EX5</title>
+<link rel="stylesheet" href="css5.css">
+<script>
+function calcularMensalidade() {
+    var matricula = document.getElementById("matricula").value;
+    var valorMensalidade = document.getElementById("valorMensalidade").value;
+    alert("O aluno " + matricula + " paga mensalmente R$ " + valorMensalidade);
+}
+</script>
+</head>
+<body>
+<h1>Formulário de Matrícula</h1>
+<form>
+    <label for="matricula">Qual o Matrícula:</label>
+    <input type="number" id="matricula" name="matricula"><br><br>
+    
+    <label for="valorMensalidade">Qual o valor da mensalidade:</label>
+    <input type="number" step="0.01" id="valorMensalidade" name="valorMensalidade"><br><br>
+    
+    <button type="button" onclick="calcularMensalidade()">Calcular</button>
+</form>
+</body>
+</html>

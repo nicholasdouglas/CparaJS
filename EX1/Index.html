@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 1</title>
+    <link rel="stylesheet" href="css1.css">
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        function Sal_Bruto(p_horasn, p_horase) {
+            let respn = 0, respe = 0, bruto = 0;
+            
+            respn = p_horasn * 12;
+            respe = p_horase * 15.50;
+            bruto = respn + respe;
+            
+            return bruto;
+        }
+
+        function Sal_Liquido(p_respbruto) {
+            let respliquido = 0;
+            
+            respliquido = p_respbruto * 0.1;
+            respliquido = p_respbruto - respliquido;
+            
+            return respliquido;
+        }
+
+        function mostra(p_cont, p_cod, p_horasn, p_horase, p_respbruto, p_respliquido) {
+            document.getElementById('output').innerHTML += `<p>${p_cont}º FUNCIONARIO CALCULADO:</p>`;
+            document.getElementById('output').innerHTML += `<p>O funcionário ${p_cod} trabalhou ${p_horasn} horas normais e ${p_horase} horas extras.</p>`;
+            document.getElementById('output').innerHTML += `<p>Irá receber R$ ${p_respbruto.toFixed(2)} de salário bruto e R$ ${p_respliquido.toFixed(2)} de salário liquido</p><br>`;
+        }
+
+        function main() {
+            for (let cont = 1; cont < 2; cont++) {
+                let cod = parseInt(prompt("QUAL SEU CODIGO:"));
+                let horasn = parseFloat(prompt("QUANTIDADE DE HORAS NORMAIS:"));
+                let horase = parseFloat(prompt("QUANTIDADE DE HORAS EXTRAS:"));
+
+                let respbruto = Sal_Bruto(horasn, horase);
+                let respliquido = Sal_Liquido(respbruto);
+
+                mostra(cont, cod, horasn, horase, respbruto, respliquido);
+            }
+        }
+
+        main();
+    </script>
+</body>
+</html>
